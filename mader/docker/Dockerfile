@@ -1,4 +1,4 @@
-FROM ros:noetic
+FROM ros:noetic-desktop-full
 
 LABEL Maintainer="Kota Kondo <kkondo@mit.edu>" \
       Description="Ubuntu 20.04, ROS Noetic for MADER"
