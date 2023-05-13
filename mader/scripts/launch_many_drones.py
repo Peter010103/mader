@@ -44,10 +44,10 @@ def convertToStringCommand(action,quad,x,y,z,goal_x,goal_y,goal_z, yaw):
 
 if __name__ == '__main__':
     # formation="sphere", "square" "circle"
-    formation="sphere"
+    formation="square"
     commands = []
-    num_of_agents=4; 
-    radius=10;
+    num_of_agents=8;
+    radius=2;
 
 
     if(formation=="sphere"):
@@ -71,26 +71,25 @@ if __name__ == '__main__':
     shift_z=1.0
 
     #TODO: Implement the square as well for other number_of_agents
-    square_starts=[[4.0, 0.0, 1.0], 
-                    [4.0, 4.0, 1.0], 
-                    [0.0, 4.0, 1.0], 
-                    [-4.0, 4.0, 1.0],
-                    [-4.0, 0.0, 1.0],
-                    [-4.0, -4.0, 1.0],
-                    [0.0, -4.0, 1.0],
-                    [4.0, -4.0, 1.0] ]
+    square_starts=[[-1.80,  1.80, 0.5],
+                   [ 0.,  1.80, 0.5],
+                   [ 1.80,  1.80, 0.5],
+                   [ 1.80,  0., 0.5],
+                   [ 1.80, -1.80, 0.5],
+                   [ 0., -1.80, 0.5],
+                   [-1.80, -1.80, 0.5],
+                   [-1.80,  0., 0.5]];
 
-    square_goals=  [[-4.0, 0.0, 1.0],
-                    [-4.0, -4.0, 1.0],
-                    [0.0, -4.0, 1.0],
-                    [4.0, -4.0, 1.0],
-                    [4.0, 0.0, 1.0],
-                    [4.0, 4.0, 1.0],
-                    [0.0, 4.0, 1.0],
-                    [-4.0, 4.0, 1.0]];
+    square_goals= [[ 1.80, -1.80, 0.5],
+                   [ 0., -1.80, 0.5],
+                   [-1.80, -1.80, 0.5],
+                   [-1.80,  0., 0.5],
+                   [-1.80,  1.80, 0.5],
+                   [ 0.,  1.80, 0.5],
+                   [ 1.80,  1.80, 0.5],
+                   [ 1.80,  0., 0.5]];
 
-    square_yaws_deg=  [-180.0, -135.0, -90.0, -45.0, 0.0, 45.0, 90.0, 135.0];
-
+    square_yaws_deg=  [-45., -90., -135., -180., 135., 90., 45., 0.];
 
 
     for i in range(1, num_mer+1):

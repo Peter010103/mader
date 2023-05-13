@@ -4,8 +4,8 @@ color_type: "vel" #"vel" or "plain"
 n_agents: 16 #only used for the color in the trajectory
 
 dc: 0.01            #(seconds) Duration for the interpolation=Value of the timer pubGoal
-goal_radius: 0.15    #(m) Drone has arrived to the goal when distance_to_goal<GOAL_RADIUS
-drone_radius: 0.05  #(m) Used for collision checking
+goal_radius: 0.01    #(m) Drone has arrived to the goal when distance_to_goal<GOAL_RADIUS
+drone_radius: 0.033  #(m) Used for collision checking
 
 #w_max: 5.0           # [rd/s] Maximum angular velocity. 0.4 for Hardware
 w_max: 2.5
@@ -28,9 +28,9 @@ z_max: 1000000000.0   # [m] JPS is not allowed to give a solution that goes high
 # a_max: [30.0, 30.0, 9.6]   #[m/s2] 
 
 #For single-agent simulations
-v_max: [3.5, 3.5, 3.5]   #[m/s]  7.0
-a_max: [20.0, 20.0, 9.6]   #[m/s2] Note that if a_max.z() > 9.81, the drone may flip
-j_max: [30.0, 30.0, 30.0]   #[m/s3]  #Right now it's only used for Gurobi, not for NLOPT
+v_max: [1.73, 1.73, 1.73]   #[m/s]  7.0
+a_max: [2.8, 2.8, 2.8]   #[m/s2] Note that if a_max.z() > 9.81, the drone may flip
+j_max: [8.0, 8.0, 8.0]   #[m/s3]  #Right now it's only used for Gurobi, not for NLOPT
 
 factor_alpha: 1.5 #[-] DeltaT = factor_alpha*States_took_previous_replan
 
@@ -41,7 +41,7 @@ weight: 1000.0 #The .0 is needed
 epsilon_tol_constraints: 0.000001
 xtol_rel: 0.0000000000001 #negative value --> stopping criterion not used
 ftol_rel: 0.0000000001 #negative value --> stopping criterion not used
-solver: "LD_MMA"
+solver: "LD_SLSQP"
 
 #Other possible solvers:
 # LD_MMA, LD_CCSAQ, LN_NELDERMEAD,  LD_LBFGS, LD_VAR2, LD_AUGLAG, LD_SLSQP, LN_SBPLX, LN_PRAXIS, ...
